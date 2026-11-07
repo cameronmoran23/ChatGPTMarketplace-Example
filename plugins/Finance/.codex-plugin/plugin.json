@@ -1,0 +1,12 @@
+{
+  "name": "finance",
+  "version": "0.1.0",
+  "description": "Skills for the Finance team.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finance",
+    "shortDescription": "Skills for the Finance team.",
+    "developerName": "Your Team",
+    "category": "Finance"
+  }
+}

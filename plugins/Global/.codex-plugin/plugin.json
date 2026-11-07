@@ -1,0 +1,12 @@
+{
+  "name": "global",
+  "version": "0.1.0",
+  "description": "Skills for everyone.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Global",
+    "shortDescription": "Skills for everyone.",
+    "developerName": "Your Team",
+    "category": "Global"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "example-marketplace",
+  "interface": {
+    "displayName": "Example Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "finance",
+      "source": {
+        "source": "local",
+        "path": "./plugins/Finance"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Finance"
+    },
+    {
+      "name": "global",
+      "source": {
+        "source": "local",
+        "path": "./plugins/Global"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Global"
+    },
+    {
+      "name": "it",
+      "source": {
+        "source": "local",
+        "path": "./plugins/IT"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "IT"
+    }
+  ]
+}

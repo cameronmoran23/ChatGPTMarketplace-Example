@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Interview Plan"
   short_description: "Build a structured interview plan from role criteria."
   default_prompt: "Use $hr-interview-plan to create an interview plan for this role."

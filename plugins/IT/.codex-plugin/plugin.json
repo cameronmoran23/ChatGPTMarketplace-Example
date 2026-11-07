@@ -1,0 +1,12 @@
+{
+  "name": "it",
+  "version": "0.1.0",
+  "description": "Skills for the IT team.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "IT",
+    "shortDescription": "Skills for the IT team.",
+    "developerName": "Your Team",
+    "category": "IT"
+  }
+}

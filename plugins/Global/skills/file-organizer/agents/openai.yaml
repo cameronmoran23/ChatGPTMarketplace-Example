@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "File Organizer"
   short_description: "Propose a clear folder structure and sort plan for files."
   default_prompt: "Use $file-organizer to organize these files into a practical folder plan."

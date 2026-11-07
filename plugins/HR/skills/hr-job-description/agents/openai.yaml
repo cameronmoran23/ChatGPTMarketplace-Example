@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Job Description Draft"
   short_description: "Draft a clear job description from role requirements and context."
   default_prompt: "Use $hr-job-description to draft a job description for this role."
