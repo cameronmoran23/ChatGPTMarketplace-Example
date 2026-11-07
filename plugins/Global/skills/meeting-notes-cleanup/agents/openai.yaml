@@ -1,0 +1,7 @@
+interface:
+  display_name: "Meeting Notes Cleanup"
+  short_description: "Turn rough meeting notes into organized, actionable minutes."
+  default_prompt: "Use $meeting-notes-cleanup to organize these meeting notes."
+policy:
+  allow_implicit_invocation: true
+

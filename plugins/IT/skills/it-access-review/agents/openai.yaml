@@ -1,0 +1,7 @@
+interface:
+  display_name: "IT Access Review"
+  short_description: "Compare access lists with supplied role needs and review criteria."
+  default_prompt: "Use $it-access-review to review these access records against the supplied criteria."
+policy:
+  allow_implicit_invocation: true
+

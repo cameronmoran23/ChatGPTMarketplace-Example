@@ -1,0 +1,7 @@
+interface:
+  display_name: "Expense Policy Check"
+  short_description: "Check expense claims against a supplied policy and flag exceptions."
+  default_prompt: "Use $finance-expense-check to review these expense claims against the policy."
+policy:
+  allow_implicit_invocation: true
+

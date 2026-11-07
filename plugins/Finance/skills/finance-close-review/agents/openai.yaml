@@ -1,0 +1,7 @@
+﻿interface:
+  display_name: "Finance Close Review"
+  short_description: "Review a monthly close package for missing items and explain variances."
+  default_prompt: "Use $finance-close-review to review this month-end close package."
+policy:
+  allow_implicit_invocation: true
+
