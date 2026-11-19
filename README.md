@@ -28,6 +28,17 @@ Click a stop to open its folder. GitHub shows the folder's README below the file
 | Marketplace entries | `global` | `finance` | `it-development`, `it-qa` | `hr-interview-plan`, `hr-job-description` |
 | Installing one entry gives you | Every Global skill | Every Finance skill, with icons and templates | One team's skills | One skill |
 
+## Making changes
+
+Use the **marketplace-maintainer** skill for any change to plugins, skills, or the marketplace. It lists every file the change affects, including these READMEs, then checks the repo.
+
+- **Codex:** type `$marketplace-maintainer` followed by the change, for example `$marketplace-maintainer add a Legal plugin with a contract-review skill`.
+- **Claude Code:** type `/marketplace-maintainer` followed by the change.
+- **Check only:** run `python .agents/skills/marketplace-maintainer/scripts/validate.py` from the repo root.
+- **Try a change in Codex:** run `codex plugin add <plugin-name>@example-marketplace`, then start a new chat. Editing the repo doesn't update an installed plugin until you run this.
+
+The skill lives in [`.agents/skills/marketplace-maintainer`](.agents/skills/marketplace-maintainer). The Claude Code copy in [`.claude/skills/marketplace-maintainer`](.claude/skills/marketplace-maintainer) points to the same instructions.
+
 ## Marketplace File: `.agents/plugins/marketplace.json`
 
 ### Description

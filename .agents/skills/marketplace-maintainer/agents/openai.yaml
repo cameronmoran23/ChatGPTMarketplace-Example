@@ -1,0 +1,7 @@
+interface:
+  display_name: "Marketplace Maintainer"
+  short_description: "Add, change, or remove plugins and skills, and check the repo."
+  default_prompt: "Use $marketplace-maintainer to make this change to the marketplace and check the repo."
+policy:
+  allow_implicit_invocation: true
+
