@@ -1,12 +1,12 @@
 # ChatGPTMarketplace-Example
 
-## Marketplace file: `.agents/plugins/marketplace.json`
+## Marketplace File: `.agents/plugins/marketplace.json`
 
-### What it is
+### Description
 
 `marketplace.json` lists the plugins in this repository. Codex reads it to show which plugins exist, where each one lives, and how it can be installed.
 
-### Why it exists
+### Purpose
 
 A plugin can only be installed if it appears in this file. Each team or department plugin gets its own entry, so people install only the plugins they need. For example, the IT Development and QA teams each have their own entry instead of sharing one IT entry.
 
@@ -45,7 +45,7 @@ A plugin can only be installed if it appears in this file. Each team or departme
 | `plugins[].policy.authentication` | When sign-in is requested. `ON_INSTALL` asks when the plugin is installed. |
 | `plugins[].category` | The group the plugin is listed under, such as `IT` or `Finance`. |
 
-### How to update it
+### Updates
 
 **Add a plugin**
 
