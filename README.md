@@ -97,7 +97,7 @@ To browse instead, run `codex` and type `/plugins`, then use ← and → to reac
 - **Desktop app:** open the plugin and select **Uninstall plugin**.
 - **CLI:** run `codex plugin remove finance@example-marketplace`.
 
-[↑ Back to the tour](#tour)
+[Tour home](#tour) · **[Next: The marketplace file ›](#marketplace-file-agentspluginsmarketplacejson)**
 
 ## Making Changes
 
@@ -173,6 +173,10 @@ A plugin can only be installed if it appears in this file. Each team or departme
 
 - Delete its entry from the `plugins` array. Removing the entry stops the plugin being offered even if its folder is still in the repository.
 
+---
+
+[‹ Previous: Showcase](#showcase) · [Tour home](#tour) · **[Next: Global ›](plugins/Global)**
+
 ## Tour Complete
 
 You've seen all four layouts. To choose one for a new group of skills:
@@ -184,4 +188,4 @@ You've seen all four layouts. To choose one for a new group of skills:
 
 Then add the plugin to the marketplace by following [Updates](#updates).
 
-[↑ Back to the tour](#tour)
+[‹ Previous: Job Description Draft](plugins/HR/skills/hr-job-description) · [Tour home](#tour)

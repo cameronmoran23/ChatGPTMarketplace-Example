@@ -39,4 +39,4 @@ One entry in [`marketplace.json`](../../.agents/plugins/marketplace.json), named
 
 ---
 
-[‹ Tour home](../../README.md#tour) · **Next stop: [Finance, using assets ›](../Finance)**
+[‹ Previous: The marketplace file](../../README.md#marketplace-file-agentspluginsmarketplacejson) · [Tour home](../../README.md#tour) · **[Next: Finance, using assets ›](../Finance)**

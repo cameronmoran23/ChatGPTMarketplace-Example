@@ -14,4 +14,4 @@ The skill builds a structured interview plan from role criteria. Each question m
 
 ---
 
-[‹ Back to HR](../../README.md) · **Next stop: [Job Description Draft ›](../hr-job-description)**
+[‹ Previous: HR](../../README.md) · [Tour home](../../../../README.md#tour) · **[Next: Job Description Draft ›](../hr-job-description)**

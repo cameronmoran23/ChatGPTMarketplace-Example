@@ -13,4 +13,4 @@ Manifest: [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)
 
 ---
 
-[‹ Previous stop: Development team](../Development_Team) · **Next stop: [HR, one plugin per skill ›](../../HR)**
+[‹ Previous: Development team](../Development_Team) · [Tour home](../../../README.md#tour) · **[Next: HR, one plugin per skill ›](../../HR)**

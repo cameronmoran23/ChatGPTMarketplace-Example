@@ -13,4 +13,4 @@ Manifest: [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)
 
 ---
 
-[‹ Back to IT](../README.md) · **Next stop: [QA team ›](../QA_Team)**
+[‹ Previous: IT](../README.md) · [Tour home](../../../README.md#tour) · **[Next: QA team ›](../QA_Team)**

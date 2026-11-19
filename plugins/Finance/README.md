@@ -71,4 +71,4 @@ One entry in [`marketplace.json`](../../.agents/plugins/marketplace.json), named
 
 ---
 
-[‹ Previous stop: Global](../Global) · **Next stop: [IT, separate team plugins ›](../IT)**
+[‹ Previous: Global](../Global) · [Tour home](../../README.md#tour) · **[Next: IT, separate team plugins ›](../IT)**

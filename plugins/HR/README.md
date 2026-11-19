@@ -39,4 +39,4 @@ Each plugin's `displayName` starts with "HR - ", so the separate entries still r
 
 ---
 
-[‹ Previous stop: QA team](../IT/QA_Team) · **Next stop: [Interview Plan ›](skills/hr-interview-plan)**
+[‹ Previous: QA team](../IT/QA_Team) · [Tour home](../../README.md#tour) · **[Next: Interview Plan ›](skills/hr-interview-plan)**

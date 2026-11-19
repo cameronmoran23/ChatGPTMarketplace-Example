@@ -36,4 +36,4 @@ To add a team, create a folder with the same layout as a team folder, then add a
 
 ---
 
-[‹ Previous stop: Finance](../Finance) · **Next stop: [Development team ›](Development_Team)**
+[‹ Previous: Finance](../Finance) · [Tour home](../../README.md#tour) · **[Next: Development team ›](Development_Team)**
