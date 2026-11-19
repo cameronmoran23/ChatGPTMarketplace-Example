@@ -6,7 +6,10 @@
   "interface": {
     "displayName": "Finance",
     "shortDescription": "Skills for the Finance team.",
-    "developerName": "Your Team",
-    "category": "Finance"
+    "developerName": "Finance Team",
+    "category": "Finance",
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
   }
 }

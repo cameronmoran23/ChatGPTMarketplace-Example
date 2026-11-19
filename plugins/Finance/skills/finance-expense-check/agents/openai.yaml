@@ -1,6 +1,9 @@
 interface:
   display_name: "Expense Policy Check"
   short_description: "Check expense claims against a supplied policy and flag exceptions."
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.png"
+  brand_color: "#0F766E"
   default_prompt: "Use $finance-expense-check to review these expense claims against the policy."
 policy:
   allow_implicit_invocation: true

@@ -6,7 +6,7 @@
   "interface": {
     "displayName": "HR - Interview Plan",
     "shortDescription": "Build a structured interview plan from role criteria.",
-    "developerName": "Your Team",
+    "developerName": "HR Team",
     "category": "HR"
   }
 }

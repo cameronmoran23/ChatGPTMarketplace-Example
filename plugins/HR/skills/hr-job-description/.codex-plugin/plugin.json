@@ -6,7 +6,7 @@
   "interface": {
     "displayName": "HR - Job Description Draft",
     "shortDescription": "Draft a clear job description from role requirements and context.",
-    "developerName": "Your Team",
+    "developerName": "HR Team",
     "category": "HR"
   }
 }
