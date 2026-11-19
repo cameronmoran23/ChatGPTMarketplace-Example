@@ -1,4 +1,4 @@
-[Tour home](../../README.md#take-the-tour) › **Stop 1: Global**
+[Tour home](../../README.md#tour) › **Stop 1: Global**
 
 # Global
 
@@ -39,4 +39,4 @@ One entry in [`marketplace.json`](../../.agents/plugins/marketplace.json), named
 
 ---
 
-[‹ Tour home](../../README.md#take-the-tour) · **Next stop: [Finance, using assets ›](../Finance)**
+[‹ Tour home](../../README.md#tour) · **Next stop: [Finance, using assets ›](../Finance)**

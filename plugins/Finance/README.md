@@ -1,4 +1,4 @@
-[Tour home](../../README.md#take-the-tour) › **Stop 2: Finance**
+[Tour home](../../README.md#tour) › **Stop 2: Finance**
 
 <img src="assets/logo.png" alt="Finance plugin logo" width="96">
 

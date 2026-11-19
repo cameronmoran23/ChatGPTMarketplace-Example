@@ -1,4 +1,4 @@
-[Tour home](../../README.md#take-the-tour) › **Stop 3: IT**
+[Tour home](../../README.md#tour) › **Stop 3: IT**
 
 # IT
 

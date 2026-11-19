@@ -1,4 +1,4 @@
-[Tour home](../../../../README.md#take-the-tour) › [HR](../../README.md) › **Stop 4b: Job Description Draft**
+[Tour home](../../../../README.md#tour) › [HR](../../README.md) › **Stop 4b: Job Description Draft**
 
 # HR - Job Description Draft
 

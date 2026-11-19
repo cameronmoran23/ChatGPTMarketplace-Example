@@ -1,4 +1,4 @@
-[Tour home](../../README.md#take-the-tour) › **Stop 4: HR**
+[Tour home](../../README.md#tour) › **Stop 4: HR**
 
 # HR
 

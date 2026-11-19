@@ -1,4 +1,4 @@
-[Tour home](../../../README.md#take-the-tour) › [IT](../README.md) › **Stop 3a: Development team**
+[Tour home](../../../README.md#tour) › [IT](../README.md) › **Stop 3a: Development team**
 
 # IT Development team
 

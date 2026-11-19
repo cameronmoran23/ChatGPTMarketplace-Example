@@ -1,4 +1,4 @@
-[Tour home](../../../../README.md#take-the-tour) › [HR](../../README.md) › **Stop 4a: Interview Plan**
+[Tour home](../../../../README.md#tour) › [HR](../../README.md) › **Stop 4a: Interview Plan**
 
 # HR - Interview Plan
 
