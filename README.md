@@ -14,7 +14,7 @@ All six plugins from this marketplace, installed in the ChatGPT desktop app and 
 
 ![Codex CLI plugin browser showing 6 of 6 Example Marketplace plugins installed](docs/screenshots/codex-cli-plugins.png)
 
-### Add the marketplace
+### Add The Marketplace
 
 The ChatGPT desktop app and the Codex CLI share their settings, so you only need to add the marketplace once. Run one of these:
 
@@ -36,7 +36,7 @@ The desktop app also reads `.agents/plugins/marketplace.json` from whichever rep
 
 To pick up new commits after adding from GitHub, run `codex plugin marketplace upgrade`.
 
-### Install plugins
+### Install Plugins
 
 Each plugin installs separately. Use the name in the second column with the CLI:
 
@@ -70,7 +70,7 @@ To browse instead, run `codex` and type `/plugins`, then use ← and → to reac
 - **Desktop app:** open the plugin and select **Uninstall plugin**.
 - **CLI:** run `codex plugin remove finance@example-marketplace`.
 
-## Take the tour
+## Tour
 
 Click a stop to open its folder. GitHub shows the folder's README below the file list, and every README ends with links to the previous and next stops.
 
@@ -88,7 +88,7 @@ Click a stop to open its folder. GitHub shows the folder's README below the file
 
 **[Begin at stop 1: Global ›](plugins/Global)**
 
-### The four layouts compared
+### The Four Layouts Compared
 
 | | [Global](plugins/Global) | [Finance](plugins/Finance) | [IT](plugins/IT) | [HR](plugins/HR) |
 |---|---|---|---|---|
@@ -96,7 +96,7 @@ Click a stop to open its folder. GitHub shows the folder's README below the file
 | Marketplace entries | `global` | `finance` | `it-development`, `it-qa` | `hr-interview-plan`, `hr-job-description` |
 | Installing one entry gives you | Every Global skill | Every Finance skill, with icons and templates | One team's skills | One skill |
 
-## Making changes
+## Making Changes
 
 Use the **marketplace-maintainer** skill for any change to plugins, skills, or the marketplace. It lists every file the change affects, including these READMEs, then checks the repo.
 
@@ -170,7 +170,7 @@ A plugin can only be installed if it appears in this file. Each team or departme
 
 - Delete its entry from the `plugins` array. Removing the entry stops the plugin being offered even if its folder is still in the repository.
 
-## Tour complete
+## Tour Complete
 
 You've seen all four layouts. To choose one for a new group of skills:
 
