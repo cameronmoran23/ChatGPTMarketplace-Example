@@ -1,7 +1,0 @@
-interface:
-  display_name: "IT Incident Triage"
-  short_description: "Organize incident symptoms, impact, and next diagnostic steps."
-  default_prompt: "Use $it-incident-triage to organize this IT incident report."
-policy:
-  allow_implicit_invocation: true
-

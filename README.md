@@ -8,7 +8,7 @@
 
 ### Why it exists
 
-A plugin can only be installed if it appears in this file. Each team or department plugin gets its own entry, so people install only the plugins they need. For example, the IT Development, QA and Operations teams each have their own entry instead of sharing one IT entry.
+A plugin can only be installed if it appears in this file. Each team or department plugin gets its own entry, so people install only the plugins they need. For example, the IT Development and QA teams each have their own entry instead of sharing one IT entry.
 
 ### Structure
 
