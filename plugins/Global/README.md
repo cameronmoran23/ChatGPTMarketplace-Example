@@ -5,7 +5,7 @@
 > [!NOTE]
 > **What this stop shows:** the basic layout. Global is one plugin with a general set of skills that anyone in the company can install. Every other stop on the tour is a variation on this layout.
 
-## Folder contents
+## Folder Contents
 
 ```
 Global/
@@ -33,10 +33,10 @@ Global/
 | [`file-organizer`](skills/file-organizer/SKILL.md) | Proposes a folder structure and a sort plan for a set of files. |
 | [`meeting-notes-cleanup`](skills/meeting-notes-cleanup/SKILL.md) | Turns rough meeting notes into organized minutes with decisions and actions. |
 
-## How it's installed
+## How It's Installed
 
 One entry in [`marketplace.json`](../../.agents/plugins/marketplace.json), named `global`. Installing it adds both skills.
 
 ---
 
-[‹ Previous: The marketplace file](../../README.md#marketplace-file-agentspluginsmarketplacejson) · [Tour home](../../README.md#tour) · **[Next: Finance, using assets ›](../Finance)**
+[‹ Previous: Install](../../INSTALL.md) · [Tour home](../../README.md#tour) · **[Next: Finance, using assets ›](../Finance)**

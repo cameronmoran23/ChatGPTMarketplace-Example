@@ -57,16 +57,17 @@ Skill folders come in two shapes, and Codex loads both:
 2. Create `.codex-plugin/plugin.json` with `name`, `version`, `description`, `skills`, and `interface` (`displayName`, `shortDescription`, `developerName`, `category`).
 3. Add at least one skill.
 4. Add an entry to `marketplace.json` by copying an existing entry. Set `name`, `source.path`, and `category`.
-5. Update the README tour:
-   - Write a README in the new folder using the same format as the others: a breadcrumb line, a NOTE box saying what the stop shows, folder contents, a skills table, how it's installed, and a Previous/Next footer.
+5. Add a row with the plugin's display name and `name` to the plugin table in `INSTALL.md`.
+6. Update the tour:
+   - Write a README in the new folder using the same format as the others: a breadcrumb line, a NOTE box saying what the stop shows, folder contents, a skills table, how it's installed, and a footer with Previous, Tour home, and Next links.
    - Add a row to the tour table in the root `README.md`. Update the comparison table if the plugin introduces a new department or layout.
-   - Update the Previous/Next links on the stops before and after the new one so the chain stays unbroken.
+   - Update the Previous and Next links on the stops before and after the new one so the chain stays unbroken. The tour runs: Showcase (`README.md`) → `INSTALL.md` → the plugin folders → `MAINTAIN.md` → Tour Complete (`README.md`).
 
 ### Rename a plugin or skill
 
 - **Plugin:**
   1. Change `name` in `plugin.json` and in the marketplace entry together.
-  2. Update every README that mentions it.
+  2. Update every README that mentions it, and its row in the `INSTALL.md` plugin table.
   3. Remove the copy installed under the old name: `codex plugin remove <old-name>@example-marketplace`.
 - **Skill:** rename the folder, then update the `SKILL.md` `name`, the `$<name>` in `default_prompt`, and the README rows.
 
@@ -74,7 +75,7 @@ Skill folders come in two shapes, and Codex loads both:
 
 - **Plugin:**
   1. Delete its marketplace entry and its folder.
-  2. Remove its row from the root README tour table and update the comparison table.
+  2. Remove its row from the root README tour table and from the `INSTALL.md` plugin table, and update the comparison table.
   3. Relink the Previous/Next links of the stops on either side.
   4. Uninstall it: `codex plugin remove <name>@example-marketplace`.
 - **Skill:** delete its folder and its README rows. If it was the plugin's last skill, remove the plugin too.

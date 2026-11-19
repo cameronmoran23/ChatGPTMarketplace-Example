@@ -7,7 +7,7 @@
 > [!NOTE]
 > **What this stop shows:** assets. Finance uses the same layout as [Global](../Global), plus image and template files. These give the plugin and each skill their own icons, and give one skill a template to fill in.
 
-## Folder contents
+## Folder Contents
 
 ```
 Finance/
@@ -32,9 +32,9 @@ Finance/
             └── exception-report-template.md
 ```
 
-## Three ways this plugin uses assets
+## Three Ways This Plugin Uses Assets
 
-### 1. Plugin icon and logo
+### 1. Plugin Icon And Logo
 
 [`assets/`](assets) holds the images that represent the whole plugin. [`plugin.json`](.codex-plugin/plugin.json) points to them:
 
@@ -44,7 +44,7 @@ Finance/
 "logo": "./assets/logo.png"
 ```
 
-### 2. Skill icons
+### 2. Skill Icons
 
 Each skill has its own `assets/` folder with a small and a large icon. The skill's `agents/openai.yaml` points to them:
 
@@ -54,7 +54,7 @@ icon_large: "./assets/large-logo.png"
 brand_color: "#0F766E"
 ```
 
-### 3. A template the skill fills in
+### 3. A Template The Skill Fills In
 
 [`exception-report-template.md`](skills/finance-expense-check/assets/exception-report-template.md) is a report layout. [`finance-expense-check/SKILL.md`](skills/finance-expense-check/SKILL.md) tells Codex to format its results using that template, so every expense review comes back in the same structure.
 
@@ -65,7 +65,7 @@ brand_color: "#0F766E"
 | <img src="skills/finance-close-review/assets/small-logo.svg" alt="" width="32"> | [`finance-close-review`](skills/finance-close-review/SKILL.md) | Reviews a month-end close package for missing items and explains variances. |
 | <img src="skills/finance-expense-check/assets/small-logo.svg" alt="" width="32"> | [`finance-expense-check`](skills/finance-expense-check/SKILL.md) | Checks expense claims against a policy and reports exceptions using the template. |
 
-## How it's installed
+## How It's Installed
 
 One entry in [`marketplace.json`](../../.agents/plugins/marketplace.json), named `finance`. Installing it adds both skills and their assets.
 

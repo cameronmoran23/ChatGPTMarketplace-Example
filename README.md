@@ -4,12 +4,12 @@ An example Codex plugin marketplace. It packages skills four different ways, so 
 
 ## Tour
 
-Click a stop to open its folder. GitHub shows the folder's README below the file list, and every README ends with links to the previous and next stops.
+Click a stop to open it. For a folder, GitHub shows its README below the file list. Every stop ends with links to the previous stop, the next stop, and this tour.
 
-| Stop | Folder | What it shows |
+| Stop | Page | What it shows |
 |---|---|---|
-| Preview | [Showcase](#showcase) | The marketplace running in the ChatGPT desktop app and the Codex CLI, with steps to add it and install plugins. |
-| Start | [The marketplace file](#marketplace-file-agentspluginsmarketplacejson) | The catalogue of every plugin Codex can install. Described below. |
+| Preview | [Showcase](#showcase) | The marketplace running in the ChatGPT desktop app and the Codex CLI. |
+| Install | [INSTALL.md](INSTALL.md) | How to add the marketplace and install, browse, or uninstall plugins. |
 | 1 | [Global](plugins/Global) | The basic layout: one plugin, a few skills, available to everyone. |
 | 2 | [Finance](plugins/Finance) | Assets: icons for the plugin and each skill, plus a template a skill fills in. |
 | 3 | [IT](plugins/IT) | Teams within one department, each with its own plugin. |
@@ -18,8 +18,9 @@ Click a stop to open its folder. GitHub shows the folder's README below the file
 | 4 | [HR](plugins/HR) | One plugin per skill, so people install skills individually. |
 | 4a | [HR › hr-interview-plan](plugins/HR/skills/hr-interview-plan) | A plugin containing a single skill. |
 | 4b | [HR › hr-job-description](plugins/HR/skills/hr-job-description) | A second single-skill plugin. |
+| Maintain | [MAINTAIN.md](MAINTAIN.md) | How to add, change, and remove plugins and skills, and how the marketplace file works. |
 
-**[Begin at stop 1: Global ›](plugins/Global)**
+**[Begin with the Showcase ›](#showcase)**
 
 ### The Four Layouts Compared
 
@@ -41,141 +42,9 @@ All six plugins from this marketplace, installed in the ChatGPT desktop app and 
 
 ![Codex CLI plugin browser showing 6 of 6 Example Marketplace plugins installed](docs/screenshots/codex-cli-plugins.png)
 
-### Add The Marketplace
+To set it up yourself, follow [INSTALL.md](INSTALL.md).
 
-The ChatGPT desktop app and the Codex CLI share their settings, so you only need to add the marketplace once. Run one of these:
-
-- **From GitHub:**
-  ```
-  codex plugin marketplace add cameronmoran23/ChatGPTMarketplace-Example
-  ```
-- **From a local clone,** run inside the cloned folder:
-  ```
-  codex plugin marketplace add .
-  ```
-
-To confirm it worked:
-
-- **CLI:** `codex plugin marketplace list` should list `example-marketplace`.
-- **Desktop app:** restart it, then open **Plugins** › **Personal**. Example Marketplace should appear.
-
-The desktop app also reads `.agents/plugins/marketplace.json` from whichever repo you open as your project. With a local clone open, the marketplace appears even without the command.
-
-To pick up new commits after adding from GitHub, run `codex plugin marketplace upgrade`.
-
-### Install Plugins
-
-Each plugin installs separately. Use the name in the second column with the CLI:
-
-| Plugin | Name |
-|---|---|
-| Finance | `finance` |
-| Global | `global` |
-| IT Development | `it-development` |
-| IT QA | `it-qa` |
-| HR - Interview Plan | `hr-interview-plan` |
-| HR - Job Description Draft | `hr-job-description` |
-
-**ChatGPT desktop app**
-
-1. Open **Plugins** › **Personal** and find **Example Marketplace**.
-2. Select **+** next to a plugin. Installed plugins show a **…** menu instead and appear under **Installed** in the sidebar.
-3. Start a new chat. Type `$` to see the plugin's skills.
-
-**Codex CLI**
-
-1. Install a plugin by name, repeating for each plugin you want:
-   ```
-   codex plugin add finance@example-marketplace
-   ```
-2. Start a new `codex` session. Type `$` to see the plugin's skills.
-
-To browse instead, run `codex` and type `/plugins`, then use ← and → to reach the **Example Marketplace** tab. **Tab** turns an installed plugin on or off, and **Ctrl+R** removes it.
-
-**Uninstall**
-
-- **Desktop app:** open the plugin and select **Uninstall plugin**.
-- **CLI:** run `codex plugin remove finance@example-marketplace`.
-
-[Tour home](#tour) · **[Next: The marketplace file ›](#marketplace-file-agentspluginsmarketplacejson)**
-
-## Making Changes
-
-Use the **marketplace-maintainer** skill for any change to plugins, skills, or the marketplace. It lists every file the change affects, including these READMEs, then checks the repo.
-
-- **Codex:** type `$marketplace-maintainer` followed by the change, for example `$marketplace-maintainer add a Legal plugin with a contract-review skill`.
-- **Claude Code:** type `/marketplace-maintainer` followed by the change.
-- **Check only:** run `python .agents/skills/marketplace-maintainer/scripts/validate.py` from the repo root.
-- **Try a change in Codex:** run `codex plugin add <plugin-name>@example-marketplace`, then start a new chat. Editing the repo doesn't update an installed plugin until you run this.
-
-The skill lives in [`.agents/skills/marketplace-maintainer`](.agents/skills/marketplace-maintainer). The Claude Code copy in [`.claude/skills/marketplace-maintainer`](.claude/skills/marketplace-maintainer) points to the same instructions.
-
-## Marketplace File: `.agents/plugins/marketplace.json`
-
-### Description
-
-`marketplace.json` lists the plugins in this repository. Codex reads it to show which plugins exist, where each one lives, and how it can be installed.
-
-### Purpose
-
-A plugin can only be installed if it appears in this file. Each team or department plugin gets its own entry, so people install only the plugins they need. For example, the IT Development and QA teams each have their own entry instead of sharing one IT entry.
-
-### Structure
-
-```json
-{
-  "name": "example-marketplace",
-  "interface": {
-    "displayName": "Example Marketplace"
-  },
-  "plugins": [
-    {
-      "name": "it-qa",
-      "source": {
-        "source": "local",
-        "path": "./plugins/IT/QA_Team"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "IT"
-    }
-  ]
-}
-```
-
-| Field | Meaning |
-|---|---|
-| `name` (top level) | The marketplace's ID. |
-| `interface.displayName` | The marketplace name people see. |
-| `plugins[].name` | The plugin's ID. Must match `name` in that plugin's `.codex-plugin/plugin.json`. |
-| `plugins[].source.path` | The plugin folder, relative to the repository root. That folder must contain `.codex-plugin/plugin.json`. |
-| `plugins[].policy.installation` | Whether people can install the plugin. `AVAILABLE` means anyone can install it. |
-| `plugins[].policy.authentication` | When sign-in is requested. `ON_INSTALL` asks when the plugin is installed. |
-| `plugins[].category` | The group the plugin is listed under, such as `IT` or `Finance`. |
-
-### Updates
-
-**Add a plugin**
-
-1. Create the plugin folder with a `.codex-plugin/plugin.json` and a `skills/<skill-name>/SKILL.md` for each skill.
-2. Add an entry to the `plugins` array. Set `name` to the plugin's `name` and `source.path` to the plugin folder.
-3. Check that the file is still valid JSON. JSON doesn't allow comments or trailing commas.
-
-**Change a plugin**
-
-- **Plugin moved:** update `source.path`.
-- **Plugin renamed:** update `name` here and in the plugin's `plugin.json`.
-- **Edits inside the plugin folder:** skills, descriptions and other content changes don't require changes to this file.
-
-**Remove a plugin**
-
-- Delete its entry from the `plugins` array. Removing the entry stops the plugin being offered even if its folder is still in the repository.
-
----
-
-[‹ Previous: Showcase](#showcase) · [Tour home](#tour) · **[Next: Global ›](plugins/Global)**
+[Tour home](#tour) · **[Next: Install ›](INSTALL.md)**
 
 ## Tour Complete
 
@@ -186,6 +55,6 @@ You've seen all four layouts. To choose one for a new group of skills:
 - **A department has distinct teams:** give each team its own plugin, as [IT](plugins/IT) does.
 - **People need to pick individual skills:** make each skill its own plugin, as [HR](plugins/HR) does.
 
-Then add the plugin to the marketplace by following [Updates](#updates).
+Then add it to the marketplace by following [MAINTAIN.md](MAINTAIN.md).
 
-[‹ Previous: Job Description Draft](plugins/HR/skills/hr-job-description) · [Tour home](#tour)
+[‹ Previous: Maintain](MAINTAIN.md) · [Tour home](#tour)

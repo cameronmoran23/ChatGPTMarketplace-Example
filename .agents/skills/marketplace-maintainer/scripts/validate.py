@@ -16,7 +16,8 @@ Checks:
   /Users/..., /home/...). Home-folder paths (~/, $HOME, %USERPROFILE%) are
   warnings, because they only work on a machine laid out like the author's.
 - Plugin folders that aren't listed in marketplace.json.
-- Relative links, images, and #anchors in every README.md.
+- Relative links, images, and #anchors in every Markdown file (the READMEs,
+  INSTALL.md, MAINTAIN.md, and any other .md in the repo).
 
 Exits 0 when there are no errors (warnings are allowed) and 1 otherwise.
 Uses the standard library only.
@@ -231,7 +232,7 @@ def strip_code(text):
     return re.sub(r"```.*?```", "", text, flags=re.S)
 
 
-def check_readmes(report, root):
+def check_markdown_links(report, root):
     link = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)|<img[^>]*\bsrc=\"([^\"]+)\"")
     heading = re.compile(r"^#{1,6}\s+(.*)$", re.M)
     anchors = {}
@@ -241,7 +242,7 @@ def check_readmes(report, root):
             anchors[path] = {slug(h) for h in heading.findall(strip_code(path.read_text(encoding="utf-8")))}
         return anchors[path]
 
-    for readme in sorted(root.rglob("README.md")):
+    for readme in sorted(root.rglob("*.md")):
         if ".git" in readme.relative_to(root).parts:
             continue
         where = readme.relative_to(root).as_posix()
@@ -291,10 +292,10 @@ def main():
             report.warn(plugin_dir.relative_to(root).as_posix(),
                         "has a plugin.json but isn't listed in marketplace.json, so it can't be installed")
 
-    check_readmes(report, root)
+    check_markdown_links(report, root)
 
     c = report.counts
-    print(f"Checked {c['plugins']} plugins, {c['skills']} skills, {c['links']} README links.")
+    print(f"Checked {c['plugins']} plugins, {c['skills']} skills, {c['links']} Markdown links.")
     for title, items in (("Errors", report.errors), ("Warnings", report.warnings)):
         if items:
             print(f"\n{title} ({len(items)}):")

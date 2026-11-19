@@ -5,7 +5,7 @@
 > [!NOTE]
 > **What this stop shows:** installing skills one at a time. Every HR skill is its own plugin with its own marketplace entry. Someone who only writes job descriptions installs only that skill. The trade-off is one manifest and one marketplace entry per skill.
 
-## Folder contents
+## Folder Contents
 
 ```
 HR/
@@ -33,7 +33,7 @@ Compare this with [Global](../Global): there, one `plugin.json` covers every ski
 
 Each plugin's `displayName` starts with "HR - ", so the separate entries still read as one group in the marketplace.
 
-## How it's installed
+## How It's Installed
 
 [`marketplace.json`](../../.agents/plugins/marketplace.json) has one entry per skill, and each entry points directly at that skill's folder.
 

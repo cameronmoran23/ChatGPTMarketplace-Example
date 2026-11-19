@@ -14,4 +14,4 @@ The skill turns role requirements into a clear, inclusive job description. It se
 
 ---
 
-[‹ Previous: Interview Plan](../hr-interview-plan) · [Tour home](../../../../README.md#tour) · **[Next: Finish the tour ›](../../../../README.md#tour-complete)**
+[‹ Previous: Interview Plan](../hr-interview-plan) · [Tour home](../../../../README.md#tour) · **[Next: Maintain ›](../../../../MAINTAIN.md)**

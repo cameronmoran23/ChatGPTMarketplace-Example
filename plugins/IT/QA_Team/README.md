@@ -1,6 +1,6 @@
 [Tour home](../../../README.md#tour) › [IT](../README.md) › **Stop 3b: QA team**
 
-# IT QA team
+# IT QA Team
 
 A complete plugin for one team. Its marketplace entry is `it-qa`. Installing it adds only the skills below, not the Development team's.
 
