@@ -1,0 +1,7 @@
+interface:
+  display_name: "Technical Design Draft"
+  short_description: "Draft a technical design document from requirements and system context."
+  default_prompt: "Use $dev-technical-design to draft a technical design for this feature."
+policy:
+  allow_implicit_invocation: true
+

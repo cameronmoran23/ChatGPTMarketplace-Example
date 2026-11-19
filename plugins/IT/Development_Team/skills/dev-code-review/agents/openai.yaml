@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review a code change for correctness, risk, and maintainability."
+  default_prompt: "Use $dev-code-review to review this code change."
+policy:
+  allow_implicit_invocation: true
+

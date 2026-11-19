@@ -1,0 +1,12 @@
+{
+  "name": "hr-job-description",
+  "version": "0.1.0",
+  "description": "Draft a clear job description from role requirements and context.",
+  "skills": "./skill/",
+  "interface": {
+    "displayName": "Job Description Draft",
+    "shortDescription": "Draft a clear job description from role requirements and context.",
+    "developerName": "Your Team",
+    "category": "HR"
+  }
+}

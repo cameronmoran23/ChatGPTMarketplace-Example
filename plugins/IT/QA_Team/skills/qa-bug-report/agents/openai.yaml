@@ -1,0 +1,7 @@
+interface:
+  display_name: "Bug Report"
+  short_description: "Turn rough defect notes into a clear, reproducible bug report."
+  default_prompt: "Use $qa-bug-report to write up this defect."
+policy:
+  allow_implicit_invocation: true
+

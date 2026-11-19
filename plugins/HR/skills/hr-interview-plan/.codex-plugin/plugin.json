@@ -1,0 +1,12 @@
+{
+  "name": "hr-interview-plan",
+  "version": "0.1.0",
+  "description": "Build a structured interview plan from role criteria.",
+  "skills": "./skill/",
+  "interface": {
+    "displayName": "Interview Plan",
+    "shortDescription": "Build a structured interview plan from role criteria.",
+    "developerName": "Your Team",
+    "category": "HR"
+  }
+}

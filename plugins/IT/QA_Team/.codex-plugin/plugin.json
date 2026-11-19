@@ -1,0 +1,12 @@
+{
+  "name": "it-qa",
+  "version": "0.1.0",
+  "description": "Skills for the IT QA team.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "IT QA",
+    "shortDescription": "Skills for the IT QA team.",
+    "developerName": "Your Team",
+    "category": "IT"
+  }
+}

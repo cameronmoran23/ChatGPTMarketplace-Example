@@ -29,16 +29,64 @@
       "category": "Global"
     },
     {
-      "name": "it",
+      "name": "it-development",
       "source": {
         "source": "local",
-        "path": "./plugins/IT"
+        "path": "./plugins/IT/Development_Team"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
       "category": "IT"
+    },
+    {
+      "name": "it-qa",
+      "source": {
+        "source": "local",
+        "path": "./plugins/IT/QA_Team"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "IT"
+    },
+    {
+      "name": "it-operations",
+      "source": {
+        "source": "local",
+        "path": "./plugins/IT/Operations_Team"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "IT"
+    },
+    {
+      "name": "hr-interview-plan",
+      "source": {
+        "source": "local",
+        "path": "./plugins/HR/skills/hr-interview-plan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "HR"
+    },
+    {
+      "name": "hr-job-description",
+      "source": {
+        "source": "local",
+        "path": "./plugins/HR/skills/hr-job-description"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "HR"
     }
   ]
 }

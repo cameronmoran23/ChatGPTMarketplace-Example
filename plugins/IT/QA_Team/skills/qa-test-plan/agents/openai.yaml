@@ -1,0 +1,7 @@
+interface:
+  display_name: "Test Plan"
+  short_description: "Build a test plan and test cases from requirements or user stories."
+  default_prompt: "Use $qa-test-plan to build a test plan for this feature."
+policy:
+  allow_implicit_invocation: true
+

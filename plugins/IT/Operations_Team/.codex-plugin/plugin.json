@@ -1,0 +1,12 @@
+{
+  "name": "it-operations",
+  "version": "0.1.0",
+  "description": "Skills for the IT Operations team.",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "IT Operations",
+    "shortDescription": "Skills for the IT Operations team.",
+    "developerName": "Your Team",
+    "category": "IT"
+  }
+}
