@@ -1,6 +1,6 @@
 # ChatGPTMarketplace-Example
 
-An example Codex plugin marketplace. It packages skills four different ways, so you can compare the layouts and pick the right one for your own teams.
+An example Codex plugin marketplace. It packages skills four different ways, so you can compare the layouts and pick and choose useful features of each.
 
 ## Showcase
 

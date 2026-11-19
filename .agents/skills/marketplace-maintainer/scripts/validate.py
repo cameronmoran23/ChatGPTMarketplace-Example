@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that this repo's Codex plugin marketplace is consistent.
+r"""Check that this repo's Codex plugin marketplace is consistent.
 
 Run from anywhere inside the repo:
     python .agents/skills/marketplace-maintainer/scripts/validate.py
@@ -12,6 +12,9 @@ Checks:
   SKILL.md directly (skill/SKILL.md, as the HR plugins use).
 - Each SKILL.md has a name and description; icon paths in agents/openai.yaml
   and in plugin.json point at real files.
+- No file inside a skill folder contains an absolute path (C:\..., \\server\...,
+  /Users/..., /home/...). Home-folder paths (~/, $HOME, %USERPROFILE%) are
+  warnings, because they only work on a machine laid out like the author's.
 - Plugin folders that aren't listed in marketplace.json.
 - Relative links, images, and #anchors in every README.md.
 
@@ -25,6 +28,18 @@ from pathlib import Path
 
 MARKETPLACE = Path(".agents/plugins/marketplace.json")
 PLUGINS_DIR = Path("plugins")
+
+# A path runs until whitespace, a quote, a backtick, or a closing bracket.
+_PATH_TAIL = r"[^\s\"'`)<>\]]*"
+ABSOLUTE_PATHS = [
+    ("Windows path", re.compile(r"(?<![A-Za-z0-9])[A-Za-z]:[\\/]" + _PATH_TAIL)),
+    ("network path", re.compile(r"(?<![\w\\])\\\\[\w.$-]+\\" + _PATH_TAIL)),
+    # Only well-known roots, so slash commands like /plugins and URLs don't match.
+    ("absolute path", re.compile(
+        r"(?<![\w.:/~-])/(?:Users|home|root|etc|var|tmp|opt|usr|mnt|private|Volumes|srv)/" + _PATH_TAIL)),
+]
+HOME_PATH = re.compile(
+    r"(?<![\w/])(?:~[\\/]|\$HOME\b|\$\{HOME\}|\$env:USERPROFILE|%USERPROFILE%|%HOMEPATH%)" + _PATH_TAIL)
 
 
 class Report:
@@ -128,6 +143,29 @@ def check_skill(skill_dir, standard_layout, report, root):
         report.warn(f"{where}/agents/openai.yaml", f"default_prompt doesn't mention ${name}")
 
 
+def check_skill_paths(skill_dir, report, root):
+    """Flag absolute and home-folder paths in every text file in a skill."""
+    for path in sorted(p for p in skill_dir.rglob("*") if p.is_file()):
+        data = path.read_bytes()
+        if b"\0" in data:
+            continue  # binary file, such as a PNG
+        try:
+            text = data.decode("utf-8")
+        except UnicodeDecodeError:
+            continue
+        where = path.relative_to(root).as_posix()
+        for number, line in enumerate(text.splitlines(), start=1):
+            for label, pattern in ABSOLUTE_PATHS:
+                for match in pattern.finditer(line):
+                    found = match.group(0).rstrip(".,;:!?")  # drop sentence punctuation
+                    report.error(f"{where}:{number}",
+                                 f"{label} `{found}`; skills must use paths relative to the skill folder")
+            for match in HOME_PATH.finditer(line):
+                found = match.group(0).rstrip(".,;:!?")
+                report.warn(f"{where}:{number}",
+                            f"home-folder path `{found}` only works on machines laid out like yours")
+
+
 def check_plugin(entry, index, report, root):
     name = entry.get("name") if isinstance(entry, dict) else None
     where = f"marketplace.json plugins[{index}]" + (f" ({name})" if name else "")
@@ -180,6 +218,7 @@ def check_plugin(entry, index, report, root):
     for skill_dir in skills:
         report.counts["skills"] += 1
         check_skill(skill_dir, standard_layout, report, root)
+        check_skill_paths(skill_dir, report, root)
     return plugin_dir
 
 

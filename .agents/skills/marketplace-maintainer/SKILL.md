@@ -32,6 +32,9 @@ Skill folders come in two shapes, and Codex loads both:
   - `source.path` in `marketplace.json` is relative to the repo root.
   - Paths in `plugin.json` (`skills`, `interface.composerIcon`, `interface.logo`) are relative to the plugin folder.
   - `icon_small` and `icon_large` in a skill's `agents/openai.yaml` are relative to the skill folder, not the `agents/` folder.
+- Nothing inside a skill folder may contain an absolute path, in any file (`SKILL.md`, `agents/openai.yaml`, templates, scripts, references). That covers drive paths like `C:\...`, network paths like `\\server\share\...`, and system paths like `/Users/...` or `/home/...`. They only exist on the author's machine, so the skill breaks for everyone else. Refer to the skill's own files with paths relative to the skill folder, such as `assets/template.md`.
+  - The check reports absolute paths as errors.
+  - It reports home-folder paths (`~/`, `$HOME`, `%USERPROFILE%`) as warnings. Keep one only if the skill really needs a file in the user's home folder, and say why.
 - Every skill has:
   - a `SKILL.md` whose frontmatter includes `name` and `description`;
   - an `agents/openai.yaml` with `display_name`, `short_description`, a `default_prompt` that mentions `$<skill-name>`, and `policy.allow_implicit_invocation`.
