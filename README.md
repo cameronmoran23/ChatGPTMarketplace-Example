@@ -2,6 +2,74 @@
 
 An example Codex plugin marketplace. It packages skills four different ways, so you can compare the layouts and pick the right one for your own teams.
 
+## Showcase
+
+All six plugins from this marketplace, installed in the ChatGPT desktop app and in the Codex CLI.
+
+**ChatGPT desktop app:** the Plugins page, Personal tab.
+
+![ChatGPT desktop app Plugins page listing the six Example Marketplace plugins, all installed](docs/screenshots/chatgpt-desktop-plugins.png)
+
+**Codex CLI:** the `/plugins` browser, Example Marketplace tab.
+
+![Codex CLI plugin browser showing 6 of 6 Example Marketplace plugins installed](docs/screenshots/codex-cli-plugins.png)
+
+### Add the marketplace
+
+The ChatGPT desktop app and the Codex CLI share their settings, so you only need to add the marketplace once. Run one of these:
+
+- **From GitHub:**
+  ```
+  codex plugin marketplace add cameronmoran23/ChatGPTMarketplace-Example
+  ```
+- **From a local clone,** run inside the cloned folder:
+  ```
+  codex plugin marketplace add .
+  ```
+
+To confirm it worked:
+
+- **CLI:** `codex plugin marketplace list` should list `example-marketplace`.
+- **Desktop app:** restart it, then open **Plugins** › **Personal**. Example Marketplace should appear.
+
+The desktop app also reads `.agents/plugins/marketplace.json` from whichever repo you open as your project. With a local clone open, the marketplace appears even without the command.
+
+To pick up new commits after adding from GitHub, run `codex plugin marketplace upgrade`.
+
+### Install plugins
+
+Each plugin installs separately. Use the name in the second column with the CLI:
+
+| Plugin | Name |
+|---|---|
+| Finance | `finance` |
+| Global | `global` |
+| IT Development | `it-development` |
+| IT QA | `it-qa` |
+| HR - Interview Plan | `hr-interview-plan` |
+| HR - Job Description Draft | `hr-job-description` |
+
+**ChatGPT desktop app**
+
+1. Open **Plugins** › **Personal** and find **Example Marketplace**.
+2. Select **+** next to a plugin. Installed plugins show a **…** menu instead and appear under **Installed** in the sidebar.
+3. Start a new chat. Type `$` to see the plugin's skills.
+
+**Codex CLI**
+
+1. Install a plugin by name, repeating for each plugin you want:
+   ```
+   codex plugin add finance@example-marketplace
+   ```
+2. Start a new `codex` session. Type `$` to see the plugin's skills.
+
+To browse instead, run `codex` and type `/plugins`, then use ← and → to reach the **Example Marketplace** tab. **Tab** turns an installed plugin on or off, and **Ctrl+R** removes it.
+
+**Uninstall**
+
+- **Desktop app:** open the plugin and select **Uninstall plugin**.
+- **CLI:** run `codex plugin remove finance@example-marketplace`.
+
 ## Take the tour
 
 Click a stop to open its folder. GitHub shows the folder's README below the file list, and every README ends with links to the previous and next stops.
